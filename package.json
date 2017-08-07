@@ -1,0 +1,29 @@
+{
+  "name": "jira-backlog-updater",
+  "version": "1.0.0",
+  "description": "Simple program to update items in a backlog and set the expected finish date based on Sprint points",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aetherwalker/jira-backlog-updater.git"
+  },
+  "keywords": [
+    "jira",
+    "backlog",
+    "sprint",
+    "release"
+  ],
+  "author": "aetherwalker@refugesystems.net",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/aetherwalker/jira-backlog-updater/issues"
+  },
+  "homepage": "https://github.com/aetherwalker/jira-backlog-updater#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}
