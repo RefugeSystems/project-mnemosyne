@@ -1,5 +1,5 @@
 var Configuration = require("./configuration/index.js");
-var AlgorithmGeneral = require("./algorithm/general.js");
+var AlgorithmGeneral = require("./algorithms/general.js");
 
 var start = Date.now();
 var boardID = parseInt(process.argv[2]);
