@@ -1,7 +1,7 @@
 {
 	"jira": {
 		"name": "Display String",
-		"url": "https://jira.yourfqdn.tld/",
+		"uri": "https://jira.yourfqdn.tld/",
 		"authentication": {
 			"type": "basic",
 			"username": "brutus",

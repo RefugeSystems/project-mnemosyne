@@ -52,7 +52,7 @@ module.exports = (function() {
 		loading = buildAuthentication(settings.jira.authentication);
 		configuration.jira = new JIRAConnection(settings.jira.name, settings.jira.uri, loading, configuration.log, settings.jira);
 	} else {
-		console.warn("Default JIRA Connection Omitted");
+		console.warn("Default JIRA Connection Omitted:\n" + JSON.stringify(settings.jira, null, 4));
 	}
 	
 	return configuration;
