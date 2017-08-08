@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/aetherwalker/jira-backlog-updater#readme",
   "dependencies": {
+    "bunyan": "^1.8.12",
+    "express": "^4.15.4",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   }

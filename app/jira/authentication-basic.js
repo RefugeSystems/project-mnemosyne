@@ -1,3 +1,5 @@
+var btoa = require("btoa");
+
 /**
  * 
  * @class BasicAuthentication
@@ -12,7 +14,7 @@ module.exports = function(username, password) {
 	 * @private
 	 * @type String
 	 */
-	var auth = btoa("Basic: " + btoa(username + ":" + password));
+	var auth = "Basic " + btoa(username + ":" + password);
 	
 	/**
 	 * 

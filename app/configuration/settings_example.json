@@ -1,0 +1,16 @@
+{
+	"jira": {
+		"name": "Display String",
+		"url": "https://jira.yourfqdn.tld/",
+		"authentication": {
+			"type": "basic",
+			"username": "brutus",
+			"password": "forthelols"
+		}
+	},
+	"log": {
+		"name": "Example-Name",
+		"path": "./test.log",
+		"_see": "https://github.com/trentm/node-bunyan"
+	}
+}
