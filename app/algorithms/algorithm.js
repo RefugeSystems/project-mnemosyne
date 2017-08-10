@@ -1,4 +1,3 @@
-var request = require("request-promise");
 
 var DURATION_TwoWeeks = 1000 * 60 * 60 * 24 * 14;
 var DURATION_OneWeeks = 1000 * 60 * 60 * 24 * 7;
@@ -11,7 +10,8 @@ var DURATION_OneWeeks = 1000 * 60 * 60 * 24 * 7;
  * @param {Object} options
  */
 module.exports = function(name, options) {
-
+	this.__proto__ = Object;
+	options = options || {};
 	
 	var points = options.points || 10;
 	var duration = options.duration || DURATION_TwoWeeks;
@@ -36,8 +36,8 @@ module.exports = function(name, options) {
 	 * @param {Number} [start] 
 	 * @return {Number}
 	 */
-	this.points = function() {
-		if(expected) {
+	this.first = function(start) {
+		if(start) {
 			first = start;
 		}
 		return first;
@@ -49,7 +49,7 @@ module.exports = function(name, options) {
 	 * @param {Number} [expected] 
 	 * @return {Number}
 	 */
-	this.points = function() {
+	this.points = function(expected) {
 		if(expected) {
 			points = expected;
 		}
@@ -72,8 +72,8 @@ module.exports = function(name, options) {
 	/**
 	 * 
 	 * @method process
-	 * @param {Array | Issue} issues An ordered array of issues from the backlog.
-	 * @return {Promise | Array | Issue}
+	 * @param {Board} board 
+	 * @return {Promise | > | Board}
 	 */
 	this.process = function() {
 		throw new Error("Process Method not Implemented");

@@ -31,6 +31,13 @@ module.exports = function(issues) {
 	this.lookup = {};
 	
 	/**
+	 * 
+	 * @property releases
+	 * @type Object | > | Release
+	 */
+	this.releases = {};
+	
+	/**
 	 * Set after board creation in all cases.
 	 * @property id
 	 * @private

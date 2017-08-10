@@ -26,6 +26,14 @@ module.exports = function(name, fqdn, authentication, log, options) {
 	base.headers["content-type"] = "application/json";
 	base.resolveWithFullResponse = true;
 	authentication.authorize(base);
+
+	var api = {};
+	api.headers = {};
+	api.uri = fqdn;
+	api.uri += "rest/api/2/";
+	api.headers["content-type"] = "application/json";
+	api.resolveWithFullResponse = true;
+	authentication.authorize(api);
 	
 	/**
 	 * 
@@ -47,7 +55,14 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			.catch(fail);
 		});
 	};
-	
+
+	/**
+	 * 
+	 * @method retrieve
+	 * @private
+	 * @param {Board} board
+	 * @return {Promise | > | Issue}
+	 */
 	var retrieve = function(board) {
 		return new Promise(function(done, fail) {
 			log.debug({"board": board}, "Resolving");
@@ -88,7 +103,14 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			.catch(fail);
 		});
 	};
-	
+
+	/**
+	 * 
+	 * @method process
+	 * @private
+	 * @param {Array | > | Response} responses
+	 * @return {Promise | > | Array | > | Issue}
+	 */
 	var process = function(responses) {
 		return new Promise(function(done, fail) {
 			log.debug("Assembling Board");
@@ -99,11 +121,66 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			done(issues);
 		});
 	};
-	
+
+	/**
+	 * 
+	 * @method cast
+	 * @private
+	 * @param {Issue} issue
+	 * @return {Promise | > | Issue}
+	 */
 	var cast = function(issues) {
 		return new Promise(function(done, fail) {
 			log.debug("Casting Board");
 			done(new Board(issues));
+		});
+	};
+	
+	/**
+	 * 
+	 * @method updateIssue
+	 * @param {Issue} issue
+	 * @return {Promise | > | Issue}
+	 */
+	this.updateIssue = function(issue) {
+		return new Promise(function(done, fail) {
+			if(!options.generalize || (Date.now() - issue.roadmapdate) < options.generalize) {
+				var req = Object.assign({}, api);
+				req.uri += "issue/" + issue.key;
+				req.method = "PUT";
+				req.body = JSON.stringify(issue.toSave());
+				request(req)
+				.then(function(response) {
+					done(issue);
+				})
+				.catch(fail);
+			} else {
+				done(issue);
+			}
+		});
+	};
+	
+	/**
+	 * 
+	 * @method updateRelease
+	 * @param {Release} release
+	 * @return {Promise | > | Release}
+	 */
+	this.updateRelease = function(release) {
+		return new Promise(function(done, fail) {
+			if(!options.generalize || (Date.now() - release.releaseDate) < options.generalize) {
+				var req = Object.assign({}, api);
+				req.uri += "version/" + release.id;
+				req.method = "PUT";
+				req.body = JSON.stringify(release.toSave());
+				request(req)
+				.then(function(response) {
+					done(release);
+				})
+				.catch(fail);
+			} else {
+				done(release);
+			}
 		});
 	};
 };

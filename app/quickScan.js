@@ -7,6 +7,7 @@ if(isNaN(boardID)) {
 	throw new Error("Invalid Board Identifier: " + process.argv[2]);
 }
 
+var options = {};
 var fetch = Configuration.jira.getBacklog(boardID);
 console.log("Fetching Board");
 
@@ -20,8 +21,8 @@ fetch.then(function(board) {
 var argument = 3;
 while(process.argv[argument]) {
 	switch(process.argv[argument++]) {
-		case "index":
-			console.log("Then -> Print");
+		case "help":
+			console.log("Help: [index, key, keys, releases, option, roadmap, releases, roadmap-clear, releases-clear]");
 			fetch = fetch.then(function(board) {
 				return new Promise(function(done) {
 					index = parseInt(process.argv[argument++]);
@@ -30,15 +31,30 @@ while(process.argv[argument]) {
 				});
 			});
 			break;
-		case "key":
-			console.log("Then -> Print");
-			fetch = fetch.then(function(board) {
-				return new Promise(function(done) {
-					index = parseInt(process.argv[argument++]);
-					console.log(JSON.stringify(board.lookup[index], null, 4));
-					done(board);
+		case "index":
+			(function() {
+				var index = process.argv[argument++];
+				console.log("Then -> Print Issue by Index[" + index + "]");
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						index = parseInt(index);
+						console.log(JSON.stringify(board.issues[index], null, 4));
+						done(board);
+					});
 				});
-			});
+			})();
+			break;
+		case "key":
+			console.log("Then -> Print Issue by Key");
+			(function() {
+				var key = process.argv[argument++];
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						console.log(JSON.stringify(board.lookup[key], null, 4));
+						done(board);
+					});
+				});
+			})();
 			break;
 		case "keys":
 			console.log("Then -> Keys");
@@ -49,17 +65,131 @@ while(process.argv[argument]) {
 				});
 			});
 			break;
+		case "releases":
+			console.log("Then -> Print Releases");
+			(function() {
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						console.log(JSON.stringify(board.releases, null, 4));
+						done(board);
+					});
+				});
+			})();
+			break;
+		case "issues":
+			console.log("Then -> Print Issues");
+			(function() {
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						console.log(JSON.stringify(board.issues, null, 4));
+						done(board);
+					});
+				});
+			})();
+			break;
+		case "exceptions":
+			console.log("Then -> Print Issues with Exceptions");
+			(function() {
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						console.log(">\tIssues with exceptions");
+						board.issues.forEach(function(i) {
+							if(i.exceptions.length) {
+								console.log(JSON.stringify(i, null, 4));
+							}
+						});
+						console.log("<\tIssues with exceptions");
+						done(board);
+					});
+				});
+			})();
+			break;
+		case "option":
+			(function() {
+				var key = process.argv[argument++];
+				var value = process.argv[argument++];
+				console.log("Then -> Set Option[" + key + " => " + value + "]");
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done) {
+						options[key] = value;
+						done(board);
+					});
+				});
+			})();
+			break;
 		case "roadmap":
-			console.log("Then -> Roadmap Dates");
-			fetch = fetch.then(AlgorithmGeneral.roadmapDates);
+			(function() {
+				var algorithm = process.argv[argument++];
+				console.log("Then -> Calculate Roadmap Dates [" + algorithm + "]");
+				fetch = fetch.then(function(board) {
+					switch(algorithm) {
+						case "general":
+							console.log(Object.keys(AlgorithmGeneral));
+							var algo = new AlgorithmGeneral("quick", options);
+							return algo.process(board, options);
+						default:
+							return new Promise(function(done, fail) {
+								fail("Unknown Algorithm for board date calculation: " + algorithm);
+							});
+					}
+				});
+			})();
+			break;
+		case "roadmap-save":
+			console.log("Then -> Save Roadmap Dates");
+			(function() {
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done, fail) {
+						var chaining = null;
+						board.issues.forEach(function(issue) {
+							if(chaining) {
+								chaining.then(function() {
+									return Configuration.jira.updateIssue(issue);
+								});
+							} else {
+								chaining = Configuration.jira.updateIssue(issue);
+							}
+						});
+						chaining
+						.then(function() {
+							done(board);
+						})
+						.catch(fail);
+					});
+				});
+			})();
 			break;
 		case "roadmap-clear":
 			console.log("Then -> Clear Roadmap Dates");
 			fetch = fetch.then(AlgorithmGeneral.releaseDates);
 			break;
 		case "releases":
-			console.log("Then -> Release Dates");
+			console.log("Then -> Calculate Release Dates");
 			fetch = fetch.then(roadmapDatesClear);
+			break;
+		case "release-save":
+			console.log("Then -> Save Release Dates");
+			(function() {
+				fetch = fetch.then(function(board) {
+					return new Promise(function(done, fail) {
+						var chaining = null;
+						Object.keys(board.releases).forEach(function(id) {
+							if(chaining) {
+								chaining.then(function() {
+									return Configuration.jira.updateRelease(board.releases[id]);
+								});
+							} else {
+								chaining = Configuration.jira.updateRelease(board.releases[id]);
+							}
+						});
+						chaining
+						.then(function() {
+							done(board);
+						})
+						.catch(fail);
+					});
+				});
+			})();
 			break;
 		case "releases-clear":
 			console.log("Then -> Clear Release Dates");
@@ -85,5 +215,5 @@ var releaseDatesClear = function(board) {
 };
 
 fetch.catch(function(fail) {
-	console.log("Error in quick access chain:\n", fail);
+	console.log("Error in quick access chain:\n", fail, "\n", fail.stack);
 });

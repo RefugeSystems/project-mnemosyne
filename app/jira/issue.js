@@ -1,121 +1,194 @@
+
+var format = require("dateformat");
+
+
+
+var pointField = "customfield_10006";
+
+var roadmapField = "customfield_10101"
+
 /**
  * 
  * @class Issue
  * @constructor
- * @param {Object} details
+ * @property {Object} details
  */
 module.exports = function(details) {
-	this.fields = {};
+	var issue =  this;
 	
 	/**
 	 * Original 
 	 * @property _detail
+	 * @private
 	 * @type Object
 	 */
-	this._detail = details;
+	var _detail = details;
+//	this._detail = details;
 	
 	/**
 	 * 
-	 * @param id
+	 * @property id
 	 * @type String
 	 */
 	this.id = details.id;
 	
 	/**
 	 * 
-	 * @param self
+	 * @property points
+	 * @type String
+	 */
+	this.points = details.fields[pointField];
+	
+	/**
+	 * 
+	 * @property isselinks
+	 * @type Array | > | LinkDescriptions
+	 */
+	this.issuelinks = details.issuelinks;
+	
+	/**
+	 * 
+	 * @property self
 	 * @type String
 	 */
 	this.self = details.self;
 	
 	/**
 	 * 
-	 * @param key
+	 * @property self
+	 * @type String
+	 */
+	this.self = details.self;
+	
+	/**
+	 * 
+	 * @property key
 	 * @type String
 	 */
 	this.key = details.key;
 	
 	/**
 	 * 
-	 * @param fields.issue
+	 * @property issue
 	 * @type String
 	 */
-	this.fields.issue = details.fields.issue;
+	this.issue = details.fields.issue;
 	
 	/**
 	 * 
-	 * @param fields.timespent
+	 * @property timespent
 	 * @type String
 	 */
-	this.fields.timespent = details.fields.timespent;
+	this.timespent = details.fields.timespent;
 	
 	/**
 	 * 
-	 * @param fields.project
+	 * @property project
 	 * @type String
 	 */
-	this.fields.project = details.fields.project;
+	this.project = details.fields.project;
 	
 	/**
 	 * 
-	 * @param fields.fixVersions
+	 * @property fixVersions
 	 * @type String
 	 */
-	this.fields.fixVersions = details.fields.fixVersions;
+	this.fixVersions = details.fields.fixVersions;
 	
 	/**
 	 * 
-	 * @param fields.labels
+	 * @property labels
 	 * @type String
 	 */
-	this.fields.labels = details.fields.labels;
+	this.labels = details.fields.labels;
 	
 	/**
 	 * 
-	 * @param fields.issuelinks
+	 * @property issuelinks
 	 * @type String
 	 */
-	this.fields.issuelinks = details.fields.issuelinks;
+	this.issuelinks = details.fields.issuelinks;
 	
 	/**
 	 * 
-	 * @param fields.assignee
+	 * @property assignee
 	 * @type String
 	 */
-	this.fields.assignee = details.fields.assignee;
+	this.assignee = details.fields.assignee;
 	
 	/**
 	 * 
-	 * @param fields.summary
+	 * @property summary
 	 * @type String
 	 */
-	this.fields.summary = details.fields.summary;
+	this.summary = details.fields.summary;
 	
 	/**
 	 * 
-	 * @param fields.description
+	 * @property description
 	 * @type String
 	 */
-	this.fields.description = details.fields.description;
+	this.description = details.fields.description;
 	
 	/**
 	 * 
-	 * @param fields.timeestimate
+	 * @property timeestimate
 	 * @type String
 	 */
-	this.fields.timeestimate = details.fields.timeestimate;
+	this.timeestimate = details.fields.timeestimate;
 	
 	/**
 	 * 
-	 * @param fields.priority
+	 * @property priority
 	 * @type String
 	 */
-	this.fields.priority = details.fields.priority;
+	this.priority = details.fields.priority;
 	
 	/**
 	 * 
-	 * @param fields.duedate
-	 * @type String
+	 * @property duedate
+	 * @type Number
 	 */
-	this.fields.duedate = details.fields.duedate;
+	this.duedate = details.fields.duedate;
+	if(this.duedate) {
+		this.duedate = new Date(this.duedate).getTime();
+	}
+	
+	/**
+	 * 
+	 * @property roadmapdate
+	 * @type Number
+	 */
+	this.roadmapdate = details.fields[roadmapField];
+	if(this.roadmapdate) {
+		this.roadmapdate = new Date(this.roadmapdate).getTime();
+	}
+	
+	/**
+	 * Descriptions of exceptions found such as dependency order violations.
+	 * @property exceptions
+	 * @type Array | > | String
+	 */
+	this.exceptions = [];
+	
+	/**
+	 * 
+	 * @method toSave
+	 * @return {Object}
+	 */
+	this.toSave = function() {
+		var tmp, saving = {
+			"key": issue.key,
+			"id": issue.id,
+			"fields": {}
+		};
+		
+		saving["fields"][roadmapField] = issue.roadmapdate;
+		if( saving["fields"][roadmapField]) {
+			var d = new Date(saving["fields"][roadmapField]);
+			saving["fields"][roadmapField] = format(d, "yyyy-mm-dd") + "T" + format(d, "hh:MM:ss.lo");
+		}
+		
+		return saving;
+	};
 };

@@ -1,5 +1,5 @@
 {
-  "name": "jira-backlog-updater",
+  "name": "jira-backlog",
   "version": "1.0.0",
   "description": "Simple program to update items in a backlog and set the expected finish date based on Sprint points",
   "main": "index.js",
@@ -25,8 +25,23 @@
   "dependencies": {
     "btoa": "^1.1.2",
     "bunyan": "^1.8.12",
+    "dateformat": "^2.0.0",
     "express": "^4.15.4",
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "sandbox": "^0.8.6"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-eslint": "0.0.5",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-yuidoc": "^1.0.0",
+    "grunt-jasmine-nodejs": "^1.6.0",
+    "gruntify-eslint": "^4.0.0",
+    "jasmine": "^2.7.0",
+    "jasmine-core": "^2.7.0",
+    "node-sandbox": "^0.1.0",
+    "sandbox": "^0.8.6",
+    "sandboxed-module": "^2.0.3"
   }
 }
