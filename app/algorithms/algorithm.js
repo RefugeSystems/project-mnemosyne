@@ -12,18 +12,18 @@ var DURATION_OneWeeks = 1000 * 60 * 60 * 24 * 7;
 module.exports = function(name, options) {
 	this.__proto__ = Object;
 	options = options || {};
-	
+
 	var points = options.points || 10;
 	var duration = options.duration || DURATION_TwoWeeks;
 	var first = options.first || 1; // Monday
-	
+
 	/**
 	 * 
 	 * @property name
 	 * @type String
 	 */
 	this.name = name;
-	
+
 	/**
 	 * The first day of the sprint.
 	 * 
@@ -42,7 +42,7 @@ module.exports = function(name, options) {
 		}
 		return first;
 	};
-	
+
 	/**
 	 * 
 	 * @method points
@@ -55,7 +55,7 @@ module.exports = function(name, options) {
 		}
 		return points;
 	};
-	
+
 	/**
 	 * 
 	 * @method duration

@@ -7,8 +7,64 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-jasmine-nodejs");
 	grunt.loadNpmTasks("grunt-contrib-yuidoc");
+	grunt.loadNpmTasks("gruntify-eslint");
+
+	var rules = {
+		strict: {
+			/* Programatic Fixes */
+			"eqeqeq": 0,
+			"curly": 2,
+			"quotes": [2, "double"],
+			"block-scoped-var": 2,
+			"no-undef": 2,
+			"semi": 2,
+			"indent": [2, "tab"],
+			"no-mixed-spaces-and-tabs": 2,
+			"new-parens": 2,
+			"keyword-spacing": [2, {
+					"before": true,
+					"after": false
+				}
+			],
+			"key-spacing": [2, {}
+			],
+			"comma-spacing": 2,
+			"comma-dangle": 2,
+			"brace-style": 2,
+			"no-trailing-spaces": 2,
+			"object-curly-newline": [2, {
+					"minProperties": 2
+				}
+			],
+			"object-property-newline": 2,
+			"space-before-blocks": 2,
+			"space-before-function-paren": [2, "never"],
+			"space-in-parens": 2,
+			"switch-colon-spacing": 2,
+
+			/* Manual Fixes */
+			"max-depth": 2,
+			"no-unused-vars": [1, {
+					varsIgnorePattern: "^drop"
+				}
+			],
+
+			/* Warnings */
+			"camelcase": 1,
+			"require-jsdoc": 1
+		},
+		loose: {
+			eqeqeq: 0,
+			curly: 1,
+			quotes: [1, "double"],
+			"block-scoped-var": 1,
+			"no-undef": 2,
+			"semi": 1,
+			'no-unused-vars': 1
+		}
+	};
 	
-	grunt.initConfig({
+	var gruntConfiguration = {
 		pkg: grunt.file.readJSON("package.json"),
 		eslint: {
 			options: {
@@ -16,18 +72,15 @@ module.exports = function(grunt) {
 					modules: true
 				},
 				globals: [
-					"requireSubject"
+					"requireSubject",
+					"require",
+					"module",
+					"Promise",
+					"console",
+					"process"
 				],
 				/* http://eslint.org/docs/rules/ */
-				rules: {
-			        eqeqeq: 0,
-			        curly: 1,
-			        quotes: [1, "double"],
-			        "block-scoped-var": 1,
-			        "no-undef": 2,
-			        "semi": 1,
-			        'no-unused-vars': 1
-			    },
+				rules: rules.loose,
 				envs: ["nodejs", "jasmine"]
 			},
 			target: ["app/**/*.js", "spec/unit/**/*.js", "./specs/algorithms/**", "./specs/configuration/**", "./specs/jira/**"]
@@ -77,11 +130,20 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-	});
+	}
+	
+	if(process.argv.indexOf("format") !== -1) {
+		gruntConfiguration.eslint.options.rules = rules.strict;
+		gruntConfiguration.eslint.options.fix = true;
+	}
+	
+	grunt.initConfig(gruntConfiguration);
 
 	grunt.registerTask("test", ["jasmine_nodejs:unit"]); 
 	grunt.registerTask("test:live", ["test", "watch"]);
 	grunt.registerTask("lint", ["eslint"]);
 	grunt.registerTask("docs", ["yuidoc"]);
 	grunt.registerTask("default", ["test:live"]);
+	
+	grunt.registerTask("format", [""]);
 };

@@ -4,6 +4,7 @@ var btoa = require("btoa");
  * 
  * @class BasicAuthentication
  * @constructor
+ * @extends Authentication
  * @param {String} username
  * @param {String} password
  */
@@ -15,7 +16,7 @@ module.exports = function(username, password) {
 	 * @type String
 	 */
 	var auth = "Basic " + btoa(username + ":" + password);
-	
+
 	/**
 	 * 
 	 * Additionally guarantees the passed object exists.

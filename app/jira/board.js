@@ -8,35 +8,35 @@ var Issue = require("./issue");
  */
 module.exports = function(issues) {
 	var board = this;
-	
+
 	/**
 	 * Ordered array of the keys within the Board
 	 * @property keys
 	 * @type Array | > | String
 	 */
 	this.keys = [];
-	
+
 	/**
 	 * 
 	 * @property issues
 	 * @type Array | > | Issue
 	 */
 	this.issues = [];
-	
+
 	/**
 	 * 
 	 * @property lookup
 	 * @type Object | > | Issue
 	 */
 	this.lookup = {};
-	
+
 	/**
 	 * 
 	 * @property releases
 	 * @type Object | > | Release
 	 */
 	this.releases = {};
-	
+
 	/**
 	 * Set after board creation in all cases.
 	 * @property id
@@ -45,7 +45,7 @@ module.exports = function(issues) {
 	 * @default null
 	 */
 	var id = null;
-	
+
 	/**
 	 * 
 	 * @method setID
@@ -54,7 +54,7 @@ module.exports = function(issues) {
 	this.setID = function(identifier) {
 		id = identifier;
 	};
-	
+
 	/**
 	 * 
 	 * @method getID
@@ -63,10 +63,10 @@ module.exports = function(issues) {
 	this.getID = function() {
 		return id;
 	};
-	
-	var x,y;
+
+	var x, y;
 	for(x=0;x<issues.length;x++) {
-		try {
+		try{
 			issues[x] = new Issue(issues[x]);
 			board.keys.push(issues[x].key);
 			board.issues.push(issues[x]);

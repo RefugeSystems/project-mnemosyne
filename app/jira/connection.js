@@ -18,7 +18,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 	if(fqdn[fqdn.length-1] !== "/" && fqdn[fqdn.length-1] !== "\\") {
 		fqdn += "/";
 	}
-	
+
 	var base = {};
 	base.headers = {};
 	base.uri = fqdn;
@@ -34,7 +34,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 	api.headers["content-type"] = "application/json";
 	api.resolveWithFullResponse = true;
 	authentication.authorize(api);
-	
+
 	/**
 	 * 
 	 * @method getBacklog
@@ -45,14 +45,14 @@ module.exports = function(name, fqdn, authentication, log, options) {
 		board = parseInt(board);
 		return new Promise(function(done, fail) {
 			retrieve(board)
-			.then(process)
-			.then(cast)
-			.then(function(constructed) {
-				log.debug({"board": board}, "Constructed");
-				constructed.setID(board);
-				done(constructed);
-			})
-			.catch(fail);
+				.then(process)
+				.then(cast)
+				.then(function(constructed) {
+					log.debug({"board": board}, "Constructed");
+					constructed.setID(board);
+					done(constructed);
+				})
+				.catch(fail);
 		});
 	};
 
@@ -69,38 +69,46 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			var req = Object.assign({}, base);
 			req.uri += "board/" + board + "/backlog";
 			request(req)
-			.then(function(response) {
-				log.debug({"board": board}, "Resolved");
-				var head = JSON.parse(response.body);
-				if(head.total < head.maxResults) {
-					done([head.issues]);
-				} else {
-					var scan = [];
-					var pages = head.total/head.maxResults;
-					for(var page = 1; page < pages; page++) {
-						log.debug({"board": board, "page": page, "start": page * head.maxResults, "end": (page+1) * head.maxResults}, "Resolving Page");
-						scan.push(new Promise(function(done, fail) {
-							var report = page;
-							var paged = Object.assign({}, base);
-							paged.uri += "board/" + board + "/backlog?startAt=" + page * head.maxResults;
-							request(paged)
-							.then(function(response) {
-								log.debug({"board": board, "page": report}, "Resolved Page");
-								var parsed = JSON.parse(response.body);
-								done(parsed.issues);
+				.then(function(response) {
+					log.debug({"board": board}, "Resolved");
+					var head = JSON.parse(response.body);
+					if(head.total < head.maxResults) {
+						done([head.issues]);
+					} else{
+						var scan = [];
+						var pages = head.total/head.maxResults;
+						for(var page = 1; page < pages; page++) {
+							log.debug({
+								"board": board,
+								"page": page,
+								"start": page * head.maxResults,
+								"end": (page+1) * head.maxResults
+							}, "Resolving Page");
+							scan.push(new Promise(function(done, fail) {
+								var report = page;
+								var paged = Object.assign({}, base);
+								paged.uri += "board/" + board + "/backlog?startAt=" + page * head.maxResults;
+								request(paged)
+									.then(function(response) {
+										log.debug({
+											"board": board,
+											"page": report
+										}, "Resolved Page");
+										var parsed = JSON.parse(response.body);
+										done(parsed.issues);
+									})
+									.catch(fail);
+							}));
+						}
+
+						Promise.all(scan)
+							.then(function(collection) {
+								done(head.issues.concat(collection));
 							})
 							.catch(fail);
-						}));
 					}
-					
-					Promise.all(scan)
-					.then(function(collection) {
-						done(head.issues.concat(collection));
-					})
-					.catch(fail);
-				}
-			})
-			.catch(fail);
+				})
+				.catch(fail);
 		});
 	};
 
@@ -135,7 +143,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			done(new Board(issues));
 		});
 	};
-	
+
 	/**
 	 * 
 	 * @method updateIssue
@@ -150,16 +158,16 @@ module.exports = function(name, fqdn, authentication, log, options) {
 				req.method = "PUT";
 				req.body = JSON.stringify(issue.toSave());
 				request(req)
-				.then(function(response) {
-					done(issue);
-				})
-				.catch(fail);
-			} else {
+					.then(function(response) {
+						done(issue);
+					})
+					.catch(fail);
+			} else{
 				done(issue);
 			}
 		});
 	};
-	
+
 	/**
 	 * 
 	 * @method updateRelease
@@ -174,11 +182,11 @@ module.exports = function(name, fqdn, authentication, log, options) {
 				req.method = "PUT";
 				req.body = JSON.stringify(release.toSave());
 				request(req)
-				.then(function(response) {
-					done(release);
-				})
-				.catch(fail);
-			} else {
+					.then(function(response) {
+						done(release);
+					})
+					.catch(fail);
+			} else{
 				done(release);
 			}
 		});

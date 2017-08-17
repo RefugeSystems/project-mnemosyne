@@ -12,9 +12,9 @@ var Release = require("../jira/release");
 module.exports = function(name, options) {
 	var algo = this;
 	this.__proto__ = new Algorithm(name);
-//	this.prototype = Algorithm; 
-	
-	
+	//	this.prototype = Algorithm; 
+
+
 	this.process = function(board, options) {
 		options = options || {};
 		return new Promise(function(done) {
@@ -23,7 +23,7 @@ module.exports = function(name, options) {
 				points: options.points || algo.points(),
 				duration: options.duration || algo.duration()
 			};
-			
+
 			var deadlines = options.deadlines;
 			var current, releases = {};
 			var points = 0;
@@ -40,10 +40,10 @@ module.exports = function(name, options) {
 			start = start.getTime();
 			var now = start;
 			var finish = now + sprint.duration;
-			
+
 			board.keys.forEach(function(key, index) {
 				current = {};
-				
+
 				/* Validate Issue */
 				if(board.lookup[key].issuelinks && board.lookup[key].issuelinks.length) {
 					board.lookup[key].issuelinks.forEach(function(link) {
@@ -63,12 +63,12 @@ module.exports = function(name, options) {
 							} else if(track < index) {
 								board.lookup[key].exceptions.push("Issue is out of order per dependency (Feeds) regarding " + link.key);
 							}
-						} else {
+						} else{
 							throw new Error("Link without inward or outward data");
 						}
 					});
 				}
-				
+
 				/* Index Issue */
 				points += board.lookup[key].points;
 				if(board.lookup[key].fixVersions && board.lookup[key].fixVersions.length) {
@@ -81,22 +81,22 @@ module.exports = function(name, options) {
 						}
 					});
 				}
-				
+
 				/* Check for Sprint Increment */
 				while(points >= sprint.points) {
 					points -= sprint.points;
 					now += sprint.duration;
 					finish += sprint.duration;
-//					console.log("Adjusting Points: " + points + "\n\tNow: " + now + "\n\tFinish: " + finish);
+					//					console.log("Adjusting Points: " + points + "\n\tNow: " + now + "\n\tFinish: " + finish);
 				}
-				
+
 				/* Update Issue Data */
 				board.lookup[key].roadmapdate = finish;
 				Object.keys(current).forEach(function(ckey) {
 					current[ckey].releaseDate = finish;
 				});
 			});
-			
+
 			done(board);
 		});
 	};

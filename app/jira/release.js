@@ -21,14 +21,14 @@ module.exports = function(details) {
 	 * @type String
 	 */
 	this.name = details.name;
-	
+
 	/**
 	 * 
 	 * @property link
 	 * @type String
 	 */
 	this.link = details.self;
-	
+
 	/**
 	 * 
 	 * @property releaseDate
@@ -38,7 +38,7 @@ module.exports = function(details) {
 	if(this.releaseDate) {
 		this.releaseDate = new Date(this.releaseDate).getTime();
 	}
-	
+
 	this.toSave = function() {
 		var releaseDate = new Date(release.releaseDate);
 		var date = "";
@@ -47,7 +47,7 @@ module.exports = function(details) {
 		date += releaseDate.getMonth() + 1;
 		date += "-";
 		date += releaseDate.getDate();
-		return {
+		return{
 			id: release.id,
 			self: release.self,
 			name: release.name,

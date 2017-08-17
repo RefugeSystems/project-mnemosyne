@@ -11,6 +11,6 @@ module.exports = function() {
 	 * @return {Object} The modified object or an object to use for authorization
 	 */
 	this.authorize = function() {
-		
+
 	};
 };
