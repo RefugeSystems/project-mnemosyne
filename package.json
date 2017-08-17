@@ -1,7 +1,7 @@
 {
-  "name": "jira-backlog",
+  "name": "project-mnemosyne",
   "version": "1.0.0",
-  "description": "Simple program to update items in a backlog and set the expected finish date based on Sprint points",
+  "description": "Cross system project aggregator",
   "main": "index.js",
   "scripts": {
     "test": "grunt"
