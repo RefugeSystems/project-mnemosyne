@@ -55,6 +55,24 @@ module.exports = function(name, fqdn, authentication, log, options) {
 				.catch(fail);
 		});
 	};
+	
+	/**
+	 * 
+	 * @method getIssue
+	 * @param {String} key
+	 * @return {Promise}
+	 */
+	this.getIssue = function(issue) {
+		return new Promise(function(done, fail) {
+			var req = Object.assign({}, api);
+			req.uri += "issue/" + issue.key;
+			request(req)
+				.then(function(response) {
+					done(response);
+				})
+				.catch(fail);
+		});
+	};
 
 	/**
 	 * 
