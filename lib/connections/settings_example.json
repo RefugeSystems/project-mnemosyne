@@ -8,7 +8,7 @@
 			"password": "forthelols"
 		}
 	},
-	"snow": {
+	"servicenow": {
 		"name": "Display String",
 		"uri": "https://example.service-now.com/",
 		"authentication": {

@@ -5,6 +5,10 @@ This project focuses on providing hooks into various systems for aggregating and
 
 This project is written to ideally be used as a library in another program, providing classes to use for interacting with different systems so that developers can easily link to other systems for automating things like updates and data synchronization.
 
+## Custom Package.json Configurations
+
+
+
 # As a Script
 
 This code base additionally provides a `quickScan` script to do simply tasks quickly without needing to write a program to use it.
