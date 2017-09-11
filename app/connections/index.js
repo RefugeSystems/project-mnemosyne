@@ -1,6 +1,5 @@
-var Bunyan = require("Bunyan");
-
-var settings = require("./settings.json");
+var Bunyan = require("bunyan");
+var Mongoose = require("mongoose");
 
 var AuthorizationBasic = require("../security/authentication-basic");
 var AuthorizationToken = require("../security/authentication-token");
@@ -20,13 +19,12 @@ var DEFAULT_EndpointSettings = {
 
 /**
  * 
- * @class Configuration
+ * @class Connections
  * @constructor
- * @static
- * @deprecated Use {{#crossLink "Connections"}}{{/crossLink}} instead.
+ * @param {Object} settings Object providing references to needed settings to initialize the various connections and listeners.
  */
-module.exports = (function() {
-	var configuration = {};
+module.exports = function(settings) {
+	var configuration = this;
 	var loading;
 
 	var buildAuthentication = function(details) {
@@ -84,6 +82,16 @@ module.exports = (function() {
 	}
 
 	/**
+	 * 
+	 * @property log
+	 * @type Bunyan
+	 */
+	if(settings.mongo && settings.mongo.path) {
+	    mongoose.Promise = global.Promise;
+		configuration.mongo = mongoose.createConnection(settings.mongo.path, settings.mongo);
+	}
+
+	/**
 	 * If a valid JIRA property is present on the settings object, this
 	 * property is initialized as the default JIRA handler.
 	 * @property jira
@@ -124,6 +132,4 @@ module.exports = (function() {
 	} else{
 		console.warn("Default Gitlab Connection Omitted:\n" + JSON.stringify(settings.gitlab, null, 4));
 	}
-
-	return configuration;
-})();
+};

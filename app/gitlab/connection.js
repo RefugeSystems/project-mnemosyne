@@ -1,5 +1,4 @@
 var request = require("request-promise");
-var configuration = require("../configuration/");
 
 /**
  * 
@@ -14,6 +13,8 @@ var configuration = require("../configuration/");
  */
 module.exports = function(name, fqdn, authentication, log, options) {
 	options = options || {};
+	options.requests = options.requests || {"retries": 3};
+	
 	options.version = parseInt(options.version);
 	options.version = isNaN(options.version) ? 3 : options.version;
 	var root = fqdn + "api/v" + options.version + "/";
@@ -32,7 +33,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 		return new Promise(function(done, fail) {
 			options = options || {};
 			options.attempts = options.attempts || 0;
-			options.retries = options.retries || configuration.requests.retries;
+			options.retries = options.retries || options.requests.retries;
 			
 			
 			if(url.length > 4 && url[0] === "h" && url[1] === "t" && url[2] === "t" && url[3] === "p") {
