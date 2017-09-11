@@ -7,6 +7,8 @@ var pointField = "customfield_10006";
 
 var roadmapField = "customfield_10101";
 
+var repoField = "customfield_10305";
+
 /**
  * 
  * @class Issue
@@ -52,6 +54,29 @@ module.exports = function(details) {
 	 * @type String
 	 */
 	this.self = details.self;
+	
+	this.repository = {};
+	if(details.fields[repoField]) {
+		try {
+			/**
+			 * 
+			 * @property repository.uri
+			 * @type String
+			 */
+			this.repository.uri = details.fields[repoField];
+			this.repository.uri = this.repository.uri.split("|");
+			
+			/**
+			 * 
+			 * @property repository.branch
+			 * @type String
+			 */
+			this.repository.branch = this.repository.uri[1].trim();
+			this.repository.uri = this.repository.uri[0].trim();
+		} catch(exception) {
+			console.warn("Malformed Repository field[" + details.key + "]: " + details.fields[repoField]);
+		}
+	}
 
 	/**
 	 * 
@@ -171,6 +196,15 @@ module.exports = function(details) {
 	 */
 	this.exceptions = [];
 
+	/**
+	 * Get the original JSON returned by JIRA describing this issue.
+	 * @method getOriginal
+	 * @return {Object}
+	 */
+	this.getOriginal = function() {
+		return details;
+	};
+	
 	/**
 	 * 
 	 * @method toSave

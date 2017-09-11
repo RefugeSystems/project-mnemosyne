@@ -58,6 +58,27 @@ module.exports = function(name, fqdn, authentication, log, options) {
 
 	/**
 	 * 
+	 * @method getSprint
+	 * @param {Number} board 
+	 * @return {Promise | > | Board} 
+	 */
+	this.getSprint = function(board) {
+		board = parseInt(board);
+		return new Promise(function(done, fail) {
+			retrieve(board)
+				.then(process)
+				.then(cast)
+				.then(function(constructed) {
+					log.debug({"board": board}, "Constructed");
+					constructed.setID(board);
+					done(constructed);
+				})
+				.catch(fail);
+		});
+	};
+
+	/**
+	 * 
 	 * @method retrieve
 	 * @private
 	 * @param {Board} board
@@ -68,6 +89,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 			log.debug({"board": board}, "Resolving");
 			var req = Object.assign({}, base);
 			req.uri += "board/" + board + "/backlog";
+			console.log("Board Initilization: " + req.uri);
 			request(req)
 				.then(function(response) {
 					log.debug({"board": board}, "Resolved");
@@ -88,6 +110,7 @@ module.exports = function(name, fqdn, authentication, log, options) {
 								var report = page;
 								var paged = Object.assign({}, base);
 								paged.uri += "board/" + board + "/backlog?startAt=" + page * head.maxResults;
+								console.log("Board Request: " + paged.uri);
 								request(paged)
 									.then(function(response) {
 										log.debug({

@@ -23,14 +23,7 @@ var argument = 3;
 while(process.argv[argument]) {
 	switch(process.argv[argument++]) {
 	case"help":
-		console.log("Help: [index, key, keys, releases, option, roadmap, releases, roadmap-clear, releases-clear]");
-		fetch = fetch.then(function(board) {
-			return new Promise(function(done) {
-				var index = parseInt(process.argv[argument++]);
-				console.log(JSON.stringify(board.issues[index], null, 4));
-				done(board);
-			});
-		});
+		console.log("Help: [index, original, key, keys, releases, option, roadmap, releases, roadmap-clear, releases-clear]");
 		break;
 	case"index":
 		(function() {
@@ -40,6 +33,19 @@ while(process.argv[argument]) {
 				return new Promise(function(done) {
 					index = parseInt(index);
 					console.log(JSON.stringify(board.issues[index], null, 4));
+					done(board);
+				});
+			});
+		})();
+		break;
+	case"original":
+		(function() {
+			var index = process.argv[argument++];
+			console.log("Then -> Print Original Issue by Index[" + index + "]");
+			fetch = fetch.then(function(board) {
+				return new Promise(function(done) {
+					index = parseInt(index);
+					console.log(JSON.stringify(board.issues[index].getOriginal(), null, 4));
 					done(board);
 				});
 			});
