@@ -1,0 +1,2502 @@
+{
+    "project": {
+        "name": "project-mnemosyne",
+        "description": "Cross system project aggregator",
+        "version": "0.0.3",
+        "url": "https://github.com/aetherwalker/project-mnemosyne#readme"
+    },
+    "files": {
+        "lib\\algorithms\\algorithm.js": {
+            "name": "lib\\algorithms\\algorithm.js",
+            "modules": {},
+            "classes": {
+                "Algorithm": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\algorithms\\general.js": {
+            "name": "lib\\algorithms\\general.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\algorithms\\index.js": {
+            "name": "lib\\algorithms\\index.js",
+            "modules": {
+                "Algorithms": 1
+            },
+            "classes": {
+                "GeneralAlgorithm": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\configuration\\index.js": {
+            "name": "lib\\configuration\\index.js",
+            "modules": {},
+            "classes": {
+                "Configuration": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\connections\\index.js": {
+            "name": "lib\\connections\\index.js",
+            "modules": {
+                "Connections": 1
+            },
+            "classes": {
+                "Connect": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\gitlab\\connection.js": {
+            "name": "lib\\gitlab\\connection.js",
+            "modules": {},
+            "classes": {
+                "GITLabConnection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jenkins\\connection.js": {
+            "name": "lib\\jenkins\\connection.js",
+            "modules": {},
+            "classes": {
+                "JenkinsConnection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jenkins\\job.js": {
+            "name": "lib\\jenkins\\job.js",
+            "modules": {
+                "Jenkins": 1
+            },
+            "classes": {
+                "JenkinsJob": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jira\\board.js": {
+            "name": "lib\\jira\\board.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jira\\connection.js": {
+            "name": "lib\\jira\\connection.js",
+            "modules": {},
+            "classes": {
+                "JIRAConnection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jira\\issue.js": {
+            "name": "lib\\jira\\issue.js",
+            "modules": {},
+            "classes": {
+                "Issue": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jira\\release.js": {
+            "name": "lib\\jira\\release.js",
+            "modules": {},
+            "classes": {
+                "Release": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\jira\\sprint.js": {
+            "name": "lib\\jira\\sprint.js",
+            "modules": {},
+            "classes": {
+                "Board": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\schemas\\_idschema.js": {
+            "name": "lib\\memory\\schemas\\_idschema.js",
+            "modules": {},
+            "classes": {
+                "Schema:idSchema": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\schemas\\_memory.js": {
+            "name": "lib\\memory\\schemas\\_memory.js",
+            "modules": {},
+            "classes": {
+                "Schema:Memory": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\schemas\\project.js": {
+            "name": "lib\\memory\\schemas\\project.js",
+            "modules": {},
+            "classes": {
+                "Schema:Project": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\schemas\\test-case.js": {
+            "name": "lib\\memory\\schemas\\test-case.js",
+            "modules": {},
+            "classes": {
+                "Schema:TestCase": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\_memory.js": {
+            "name": "lib\\memory\\_memory.js",
+            "modules": {},
+            "classes": {
+                "Memory": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\memory\\project.js": {
+            "name": "lib\\memory\\project.js",
+            "modules": {},
+            "classes": {
+                "Project": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\security\\authentication-basic.js": {
+            "name": "lib\\security\\authentication-basic.js",
+            "modules": {},
+            "classes": {
+                "BasicAuthentication": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\security\\authentication-credentials.js": {
+            "name": "lib\\security\\authentication-credentials.js",
+            "modules": {},
+            "classes": {
+                "CredentialAuthentication": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\security\\authentication-token.js": {
+            "name": "lib\\security\\authentication-token.js",
+            "modules": {},
+            "classes": {
+                "TokenAuthentication": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\security\\authentication-url.js": {
+            "name": "lib\\security\\authentication-url.js",
+            "modules": {},
+            "classes": {
+                "URLAuthentication": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\security\\authentication.js": {
+            "name": "lib\\security\\authentication.js",
+            "modules": {},
+            "classes": {
+                "Authentication": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\serviceNow\\connection.js": {
+            "name": "lib\\serviceNow\\connection.js",
+            "modules": {},
+            "classes": {
+                "ServiceNowConnection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\utility\\random.js": {
+            "name": "lib\\utility\\random.js",
+            "modules": {},
+            "classes": {
+                "Random": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib\\index.js": {
+            "name": "lib\\index.js",
+            "modules": {
+                "Main": 1
+            },
+            "classes": {
+                "IntegratredService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Algorithms": {
+            "name": "Algorithms",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Algorithm": 1,
+                "GeneralAlgorithm": 1,
+                "Configuration": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib\\configuration\\index.js",
+            "line": 21,
+            "itemtype": "main"
+        },
+        "Connections": {
+            "name": "Connections",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Connect": 1,
+                "GITLabConnection": 1,
+                "JenkinsConnection": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib\\jenkins\\connection.js",
+            "line": 7,
+            "itemtype": "main"
+        },
+        "Jenkins": {
+            "name": "Jenkins",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "JIRAConnection": 1,
+                "ServiceNowConnection": 1,
+                "JenkinsJob": 1,
+                "Board": 1,
+                "Issue": 1,
+                "Release": 1,
+                "Schema:idSchema": 1,
+                "Schema:Memory": 1,
+                "Schema:Project": 1,
+                "Schema:TestCase": 1,
+                "Memory": 1,
+                "Project": 1,
+                "BasicAuthentication": 1,
+                "CredentialAuthentication": 1,
+                "TokenAuthentication": 1,
+                "URLAuthentication": 1,
+                "Authentication": 1,
+                "Random": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib\\utility\\random.js",
+            "line": 3
+        },
+        "Main": {
+            "name": "Main",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "IntegratredService": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib\\index.js",
+            "line": 4,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "connections",
+                    "description": "Contains the connections to JIRA, GitLab, ServiceNow, and Jenkins",
+                    "type": "Connections"
+                }
+            ]
+        }
+    },
+    "classes": {
+        "Algorithm": {
+            "name": "Algorithm",
+            "shortname": "Algorithm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Algorithms",
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 5,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GeneralAlgorithm": {
+            "name": "GeneralAlgorithm",
+            "shortname": "GeneralAlgorithm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Algorithms",
+            "file": "lib\\algorithms\\index.js",
+            "line": 7,
+            "is_constructor": 1,
+            "extends": "Algorithm",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        "Configuration": {
+            "name": "Configuration",
+            "shortname": "Configuration",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Algorithms",
+            "namespace": "",
+            "file": "lib\\configuration\\index.js",
+            "line": 21,
+            "is_constructor": 1,
+            "static": 1,
+            "deprecated": true,
+            "deprecationMessage": "Use {{#crossLink \"Connections\"}}{{/crossLink}} instead."
+        },
+        "Connect": {
+            "name": "Connect",
+            "shortname": "Connect",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Connections",
+            "namespace": "",
+            "file": "lib\\connections\\index.js",
+            "line": 26,
+            "is_constructor": 1,
+            "static": 1,
+            "params": [
+                {
+                    "name": "settings",
+                    "description": "Object providing references to needed settings to initialize the various connections and listeners.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "JIRAConnection": {
+            "name": "JIRAConnection",
+            "shortname": "JIRAConnection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\jira\\connection.js",
+            "line": 6,
+            "description": "JIRA Connection constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fqdn",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "authentication",
+                    "description": "",
+                    "type": "Authentication"
+                },
+                {
+                    "name": "log",
+                    "description": "",
+                    "type": "Log"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "ServiceNowConnection": {
+            "name": "ServiceNowConnection",
+            "shortname": "ServiceNowConnection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\serviceNow\\connection.js",
+            "line": 2,
+            "description": "Service-Now Connection constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fqdn",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "authentication",
+                    "description": "",
+                    "type": "Authentication"
+                },
+                {
+                    "name": "log",
+                    "description": "",
+                    "type": "Log"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GITLabConnection": {
+            "name": "GITLabConnection",
+            "shortname": "GITLabConnection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Connections",
+            "namespace": "",
+            "file": "lib\\gitlab\\connection.js",
+            "line": 3,
+            "description": "GITLab Connection constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fqdn",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "authentication",
+                    "description": "",
+                    "type": "Authentication"
+                },
+                {
+                    "name": "configuration",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "JenkinsConnection": {
+            "name": "JenkinsConnection",
+            "shortname": "JenkinsConnection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Connections",
+            "namespace": "",
+            "file": "lib\\jenkins\\connection.js",
+            "line": 7,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fqdn",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "authentication",
+                    "description": "",
+                    "type": "Authentication"
+                },
+                {
+                    "name": "configuration",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "JenkinsJob": {
+            "name": "JenkinsJob",
+            "shortname": "JenkinsJob",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\jenkins\\job.js",
+            "line": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "xml2js Object specification for an XML file representing the job config.xml file",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Board": {
+            "name": "Board",
+            "shortname": "Board",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\jira\\sprint.js",
+            "line": 3,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "issues",
+                    "description": "",
+                    "type": "Array | > | Issue"
+                }
+            ]
+        },
+        "Issue": {
+            "name": "Issue",
+            "shortname": "Issue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\jira\\issue.js",
+            "line": 11,
+            "is_constructor": 1,
+            "itemtype": "property",
+            "type": "Object"
+        },
+        "Release": {
+            "name": "Release",
+            "shortname": "Release",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\jira\\release.js",
+            "line": 4,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "details",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Schema:idSchema": {
+            "name": "Schema:idSchema",
+            "shortname": "Schema:idSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\schemas\\_idschema.js",
+            "line": 1,
+            "is_constructor": 1,
+            "extends": "Memory",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Schema:Memory": {
+            "name": "Schema:Memory",
+            "shortname": "Schema:Memory",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\schemas\\_memory.js",
+            "line": 3,
+            "is_constructor": 1
+        },
+        "Schema:Project": {
+            "name": "Schema:Project",
+            "shortname": "Schema:Project",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\schemas\\project.js",
+            "line": 13,
+            "is_constructor": 1,
+            "extends": "Schema:Memory",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Schema:TestCase": {
+            "name": "Schema:TestCase",
+            "shortname": "Schema:TestCase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\schemas\\test-case.js",
+            "line": 7,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "node",
+                    "description": "XML Node describing the test case in JUnit format as parsed by the xml-parser.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "Memory": {
+            "name": "Memory",
+            "shortname": "Memory",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\_memory.js",
+            "line": 3,
+            "is_constructor": 1
+        },
+        "Project": {
+            "name": "Project",
+            "shortname": "Project",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\memory\\project.js",
+            "line": 5,
+            "is_constructor": 1,
+            "extends": "Memory",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "BasicAuthentication": {
+            "name": "BasicAuthentication",
+            "shortname": "BasicAuthentication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\security\\authentication-basic.js",
+            "line": 3,
+            "is_constructor": 1,
+            "extends": "Authentication",
+            "params": [
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "password",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        "CredentialAuthentication": {
+            "name": "CredentialAuthentication",
+            "shortname": "CredentialAuthentication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\security\\authentication-credentials.js",
+            "line": 1,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "password",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        "TokenAuthentication": {
+            "name": "TokenAuthentication",
+            "shortname": "TokenAuthentication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\security\\authentication-token.js",
+            "line": 3,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "field",
+                    "description": "The field that names the token",
+                    "type": "String"
+                },
+                {
+                    "name": "token",
+                    "description": "The value of the token to pass for authentication",
+                    "type": "String"
+                },
+                {
+                    "name": "path",
+                    "description": "Indicates if the field is in the header, body, or query. Header by default.",
+                    "type": "String",
+                    "optional": true
+                }
+            ]
+        },
+        "URLAuthentication": {
+            "name": "URLAuthentication",
+            "shortname": "URLAuthentication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\security\\authentication-url.js",
+            "line": 1,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "password",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        "Authentication": {
+            "name": "Authentication",
+            "shortname": "Authentication",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\security\\authentication.js",
+            "line": 1,
+            "is_constructor": 1
+        },
+        "Random": {
+            "name": "Random",
+            "shortname": "Random",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Jenkins",
+            "namespace": "",
+            "file": "lib\\utility\\random.js",
+            "line": 3,
+            "description": "Provides a suite of functions for generating random data.",
+            "is_constructor": 1,
+            "static": 1
+        },
+        "IntegratredService": {
+            "name": "IntegratredService",
+            "shortname": "IntegratredService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Main",
+            "namespace": "",
+            "file": "lib\\index.js",
+            "line": 4
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 20,
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "class": "Algorithm"
+        },
+        {
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 27,
+            "description": "The first day of the sprint.\n\n0: Sunday\n1: Monday  \n2: Tuesday \n...",
+            "itemtype": "method",
+            "name": "first",
+            "params": [
+                {
+                    "name": "start",
+                    "description": "",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Algorithm"
+        },
+        {
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 46,
+            "itemtype": "method",
+            "name": "points",
+            "params": [
+                {
+                    "name": "expected",
+                    "description": "",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Algorithm"
+        },
+        {
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 59,
+            "itemtype": "method",
+            "name": "duration",
+            "params": [
+                {
+                    "name": "time",
+                    "description": "Duration for the sprint in milliseconds.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Algorithm"
+        },
+        {
+            "file": "lib\\algorithms\\algorithm.js",
+            "line": 72,
+            "itemtype": "method",
+            "name": "process",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "",
+                    "type": "Board"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Board"
+            },
+            "class": "Algorithm"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 43,
+            "description": "The package.json information",
+            "itemtype": "property",
+            "name": "package",
+            "type": "Object",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 50,
+            "description": "Configuration settings for manage requests out to systems.",
+            "itemtype": "property",
+            "name": "request",
+            "type": "Object",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 60,
+            "description": "Configuration settings for the REST endpoint. Only configured if endpoint is defined in settings.",
+            "itemtype": "property",
+            "name": "endpoint",
+            "type": "Object",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 74,
+            "itemtype": "property",
+            "name": "log",
+            "type": "Bunyan",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 93,
+            "description": "If a valid JIRA property is present on the settings object, this\nproperty is initialized as the default JIRA handler.",
+            "itemtype": "property",
+            "name": "jira",
+            "type": "JIRAConnection",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 107,
+            "description": "If a valid Service-Now property is present on the settings object, this\nproperty is initialized as the default Service-Now handler.",
+            "itemtype": "property",
+            "name": "snow",
+            "type": "SNowConnection",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\configuration\\index.js",
+            "line": 121,
+            "description": "If a valid GitLab property is present on the settings object, this\nproperty is initialized as the default GitLab handler.",
+            "itemtype": "property",
+            "name": "gitlab",
+            "type": "GLabConnection",
+            "class": "Configuration",
+            "module": "Algorithms"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 48,
+            "description": "The package.json information",
+            "itemtype": "property",
+            "name": "package",
+            "type": "Object",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 55,
+            "description": "Configuration settings for manage requests out to systems.",
+            "itemtype": "property",
+            "name": "request",
+            "type": "Object",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 65,
+            "description": "Configuration settings for the REST endpoint. Only configured if endpoint is defined in settings.",
+            "itemtype": "property",
+            "name": "endpoint",
+            "type": "Object",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 79,
+            "itemtype": "property",
+            "name": "log",
+            "type": "Bunyan",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 91,
+            "itemtype": "property",
+            "name": "log",
+            "type": "Bunyan",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 101,
+            "description": "If a valid JIRA property is present on the settings object, this\nproperty is initialized as the default JIRA handler.",
+            "itemtype": "property",
+            "name": "jira",
+            "type": "JIRAConnection",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 115,
+            "description": "If a valid Service-Now property is present on the settings object, this\nproperty is initialized as the default Service-Now handler.",
+            "itemtype": "property",
+            "name": "servicenow",
+            "type": "SNowConnection",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\connections\\index.js",
+            "line": 129,
+            "description": "If a valid GitLab property is present on the settings object, this\nproperty is initialized as the default GitLab handler.",
+            "itemtype": "property",
+            "name": "gitlab",
+            "type": "GLabConnection",
+            "class": "Connect",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 22,
+            "description": "Handles pushing a request to the Gitlab host.",
+            "itemtype": "method",
+            "name": "retrieveURL",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "page",
+                    "description": "",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 96,
+            "itemtype": "method",
+            "name": "addDeployKey",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Current deployment key array.",
+                "type": "Array | > | Number"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 109,
+            "itemtype": "method",
+            "name": "removeDeployKey",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Current deployment key array.",
+                "type": "Array | > | Number"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 123,
+            "description": "Manages resolution of all pages for a request an returning all results as one array.",
+            "itemtype": "method",
+            "name": "retrieveURL",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 171,
+            "itemtype": "method",
+            "name": "getProject",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 208,
+            "itemtype": "method",
+            "name": "getProjectDeployKeys",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 225,
+            "itemtype": "method",
+            "name": "",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "Name or ID for the key to enable",
+                    "type": "String | Number"
+                },
+                {
+                    "name": "failable",
+                    "description": "When true, requesting a key that isn't available in the Project will fail\n \t\tthe Promise. Otherwise the requested key is simply ignored.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function | > | Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 272,
+            "itemtype": "method",
+            "name": "",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "ID for the key to delete",
+                    "type": "Number"
+                },
+                {
+                    "name": "failable",
+                    "description": "When true, requesting a key that isn't available in the Project will fail\n \t\tthe Promise. Otherwise the requested key is simply ignored.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function | > | Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 300,
+            "itemtype": "method",
+            "name": "enableSystemProjectDeployKeys",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 320,
+            "itemtype": "method",
+            "name": "addProjectWebhook",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                },
+                {
+                    "name": "url",
+                    "description": "Webhook URL",
+                    "type": "String"
+                },
+                {
+                    "name": "conditions",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 338,
+            "description": "Written to be added to a Promise chain for a project.\n\nDeletes any webhook matching the passed URL and finishes when complete.",
+            "itemtype": "method",
+            "name": "cleanHook",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 365,
+            "itemtype": "method",
+            "name": "getProjectWebhooks",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 385,
+            "description": "Written to be added to a Promise chain for a project.",
+            "itemtype": "method",
+            "name": "addWebhook",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "conditions",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Project"
+            },
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 417,
+            "itemtype": "method",
+            "name": "deleteWebhook",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                },
+                {
+                    "name": "branch",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 437,
+            "itemtype": "method",
+            "name": "getCommits",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "Project"
+                },
+                {
+                    "name": "branch",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\gitlab\\connection.js",
+            "line": 455,
+            "description": "Internal method for resolving a request for commits",
+            "itemtype": "method",
+            "name": "commitChain",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "commits",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "finish",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "failure",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "GITLabConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\jenkins\\connection.js",
+            "line": 81,
+            "itemtype": "method",
+            "name": "resolveJob",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | JenkinsJob"
+            },
+            "class": "JenkinsConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\jenkins\\connection.js",
+            "line": 103,
+            "itemtype": "method",
+            "name": "getJob",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | JenkinsJob"
+            },
+            "class": "JenkinsConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\jenkins\\connection.js",
+            "line": 136,
+            "itemtype": "method",
+            "name": "updateJob",
+            "params": [
+                {
+                    "name": "job",
+                    "description": "",
+                    "type": "JenkinsJob"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | JenkinsJob"
+            },
+            "class": "JenkinsConnection",
+            "module": "Connections"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 12,
+            "description": "Ordered array of the keys within the Board",
+            "itemtype": "property",
+            "name": "keys",
+            "type": "Array | > | String",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 19,
+            "itemtype": "property",
+            "name": "issues",
+            "type": "Array | > | Issue",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 26,
+            "itemtype": "property",
+            "name": "lookup",
+            "type": "Object | > | Issue",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 33,
+            "itemtype": "property",
+            "name": "releases",
+            "type": "Object | > | Release",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 40,
+            "description": "Set to identify what kind of issue grouping this Board is tracking (ie. Backlog or Project).",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "default": "null",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 48,
+            "description": "Set after board creation in all cases.",
+            "itemtype": "property",
+            "name": "id",
+            "access": "private",
+            "tagname": "",
+            "type": "String",
+            "default": "null",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 57,
+            "itemtype": "method",
+            "name": "setID",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\board.js",
+            "line": 66,
+            "itemtype": "method",
+            "name": "getID",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 38,
+            "itemtype": "method",
+            "name": "getBacklog",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Board"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 60,
+            "itemtype": "method",
+            "name": "getProject",
+            "params": [
+                {
+                    "name": "project",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Issues are returned in a Board Object as that class handles all indexing.",
+                "type": "Promise | > | Board"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 87,
+            "itemtype": "method",
+            "name": "getIssue",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 105,
+            "itemtype": "method",
+            "name": "getSprint",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Board"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 126,
+            "itemtype": "method",
+            "name": "retrieve",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "",
+                    "type": "Board"
+                },
+                {
+                    "name": "options",
+                    "description": "Override defaults for the request for changing the API",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Issue"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 200,
+            "itemtype": "method",
+            "name": "process",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "responses",
+                    "description": "",
+                    "type": "Array | > | Response"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Array | > | Issue"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 218,
+            "itemtype": "method",
+            "name": "cast",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "issue",
+                    "description": "",
+                    "type": "Issue"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Issue"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 232,
+            "itemtype": "method",
+            "name": "updateIssue",
+            "params": [
+                {
+                    "name": "issue",
+                    "description": "",
+                    "type": "Issue"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Issue"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\connection.js",
+            "line": 258,
+            "itemtype": "method",
+            "name": "updateRelease",
+            "params": [
+                {
+                    "name": "release",
+                    "description": "",
+                    "type": "Release"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise | > | Release"
+            },
+            "class": "JIRAConnection",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 20,
+            "description": "Original",
+            "itemtype": "property",
+            "name": "_detail",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 29,
+            "itemtype": "property",
+            "name": "id",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 36,
+            "itemtype": "property",
+            "name": "points",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 43,
+            "itemtype": "property",
+            "name": "isselinks",
+            "type": "Array | > | LinkDescriptions",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 50,
+            "itemtype": "property",
+            "name": "self",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 60,
+            "itemtype": "property",
+            "name": "repository.uri",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 68,
+            "itemtype": "property",
+            "name": "repository.branch",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 80,
+            "itemtype": "property",
+            "name": "self",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 87,
+            "itemtype": "property",
+            "name": "key",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 94,
+            "itemtype": "property",
+            "name": "issue",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 101,
+            "itemtype": "property",
+            "name": "timespent",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 108,
+            "itemtype": "property",
+            "name": "project",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 115,
+            "itemtype": "property",
+            "name": "fixVersions",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 130,
+            "itemtype": "property",
+            "name": "labels",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 137,
+            "itemtype": "property",
+            "name": "issuelinks",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 144,
+            "itemtype": "property",
+            "name": "assignee",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 151,
+            "itemtype": "property",
+            "name": "summary",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 158,
+            "itemtype": "property",
+            "name": "description",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 165,
+            "itemtype": "property",
+            "name": "timeestimate",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 172,
+            "itemtype": "property",
+            "name": "priority",
+            "type": "String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 179,
+            "itemtype": "property",
+            "name": "duedate",
+            "type": "Number",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 189,
+            "itemtype": "property",
+            "name": "roadmapdate",
+            "type": "Number",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 199,
+            "description": "Descriptions of exceptions found such as dependency order violations.",
+            "itemtype": "property",
+            "name": "exceptions",
+            "type": "Array | > | String",
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 206,
+            "description": "Get the original JSON returned by JIRA describing this issue.",
+            "itemtype": "method",
+            "name": "getOriginal",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\issue.js",
+            "line": 215,
+            "itemtype": "method",
+            "name": "toSave",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Issue",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\release.js",
+            "line": 17,
+            "itemtype": "property",
+            "name": "id",
+            "type": "String",
+            "class": "Release",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\release.js",
+            "line": 24,
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "class": "Release",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\release.js",
+            "line": 31,
+            "itemtype": "property",
+            "name": "link",
+            "type": "String",
+            "class": "Release",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\release.js",
+            "line": 38,
+            "itemtype": "property",
+            "name": "issues",
+            "type": "Array | > | Issue",
+            "class": "Release",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\release.js",
+            "line": 45,
+            "itemtype": "property",
+            "name": "releaseDate",
+            "type": "Number",
+            "class": "Release",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 12,
+            "description": "Ordered array of the keys within the Board",
+            "itemtype": "property",
+            "name": "keys",
+            "type": "Array | > | String",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 19,
+            "itemtype": "property",
+            "name": "issues",
+            "type": "Array | > | Issue",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 26,
+            "itemtype": "property",
+            "name": "lookup",
+            "type": "Object | > | Issue",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 33,
+            "itemtype": "property",
+            "name": "releases",
+            "type": "Object | > | Release",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 40,
+            "description": "Set after board creation in all cases.",
+            "itemtype": "property",
+            "name": "id",
+            "access": "private",
+            "tagname": "",
+            "type": "String",
+            "default": "null",
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 49,
+            "itemtype": "method",
+            "name": "setID",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\jira\\sprint.js",
+            "line": 58,
+            "itemtype": "method",
+            "name": "getID",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Board",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\_idschema.js",
+            "line": 9,
+            "description": "ID in Gitlab",
+            "itemtype": "property",
+            "name": "gitlab",
+            "type": "String",
+            "class": "Schema:idSchema",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\_idschema.js",
+            "line": 15,
+            "description": "ID in JIRA",
+            "itemtype": "property",
+            "name": "jira",
+            "type": "String",
+            "class": "Schema:idSchema",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\_idschema.js",
+            "line": 21,
+            "description": "ID in Jenkins",
+            "itemtype": "property",
+            "name": "jenkins",
+            "type": "String",
+            "class": "Schema:idSchema",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\_idschema.js",
+            "line": 27,
+            "description": "ID in Service-Now",
+            "itemtype": "property",
+            "name": "snow",
+            "type": "String",
+            "class": "Schema:idSchema",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\_memory.js",
+            "line": 22,
+            "itemtype": "method",
+            "name": "_model",
+            "static": 1,
+            "params": [
+                {
+                    "name": "connection",
+                    "description": "",
+                    "type": "MongooseConnection"
+                }
+            ],
+            "class": "Schema:Memory",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\project.js",
+            "line": 30,
+            "description": "Internal identifier for tracking, created by MongoDB on saving.",
+            "itemtype": "property",
+            "name": "_id",
+            "type": "ObjectId",
+            "class": "Schema:Project",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\project.js",
+            "line": 36,
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "class": "Schema:Project",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\project.js",
+            "line": 43,
+            "itemtype": "property",
+            "name": "description",
+            "type": "String",
+            "class": "Schema:Project",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\memory\\schemas\\project.js",
+            "line": 50,
+            "itemtype": "property",
+            "name": "id",
+            "type": "Object",
+            "class": "Schema:Project",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\security\\authentication-basic.js",
+            "line": 12,
+            "itemtype": "property",
+            "name": "auth",
+            "access": "private",
+            "tagname": "",
+            "type": "String",
+            "class": "BasicAuthentication",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\security\\authentication-basic.js",
+            "line": 20,
+            "description": "Additionally guarantees the passed object exists.",
+            "itemtype": "method",
+            "name": "authorize",
+            "params": [
+                {
+                    "name": "request",
+                    "description": "",
+                    "type": "RequestOptions"
+                }
+            ],
+            "return": {
+                "description": "The passed object with authorization information added.",
+                "type": "RequestOptions"
+            },
+            "class": "BasicAuthentication",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\security\\authentication-token.js",
+            "line": 14,
+            "description": "Additionally guarantees the passed object exists.",
+            "itemtype": "method",
+            "name": "authorize",
+            "params": [
+                {
+                    "name": "request",
+                    "description": "",
+                    "type": "RequestOptions"
+                }
+            ],
+            "return": {
+                "description": "The passed object with authorization information added.",
+                "type": "RequestOptions"
+            },
+            "class": "TokenAuthentication",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\security\\authentication-url.js",
+            "line": 13,
+            "description": "Additionally guarantees the passed object exists.",
+            "itemtype": "method",
+            "name": "authorize",
+            "params": [
+                {
+                    "name": "request",
+                    "description": "",
+                    "type": "RequestOptions"
+                }
+            ],
+            "return": {
+                "description": "The passed object with authorization information added.",
+                "type": "RequestOptions"
+            },
+            "class": "URLAuthentication",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\security\\authentication.js",
+            "line": 7,
+            "description": "This method is implemented by the extending class.",
+            "itemtype": "method",
+            "name": "authorize",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "The object to authorize",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The modified object or an object to use for authorization",
+                "type": "Object"
+            },
+            "class": "Authentication",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\utility\\random.js",
+            "line": 10,
+            "description": "Quick reference array for generating random strings",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "alphanumeric",
+            "type": "Array",
+            "class": "Random",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\utility\\random.js",
+            "line": 18,
+            "description": "<p>Method for getting a random floating point number x | min <= x < min + range</p>\n<p>As an example, random(5) will yield a number between 0 and 5 where as\nrandom(5,5) will yield a number between 5 and 10.<p>",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "number",
+            "params": [
+                {
+                    "name": "range",
+                    "description": "The \"width\" of the range of numbers desired.",
+                    "type": "Number"
+                },
+                {
+                    "name": "min",
+                    "description": "The minimum number desired.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A random number.",
+                "type": "Number"
+            },
+            "class": "Random",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\utility\\random.js",
+            "line": 35,
+            "description": "<p>Method for getting a random integer x | min <= x < min + range</p>\n<p>As an example, random(5) will yield a number between 0 and 4 where as\nrandom(5,5) will yield a number between 5 and 9.<p>",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "integer",
+            "params": [
+                {
+                    "name": "range",
+                    "description": "The \"width\" of the range of numbers desired.",
+                    "type": "Number"
+                },
+                {
+                    "name": "min",
+                    "description": "The minimum number desired.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A random number.",
+                "type": "Number"
+            },
+            "class": "Random",
+            "module": "Jenkins"
+        },
+        {
+            "file": "lib\\utility\\random.js",
+            "line": 52,
+            "description": "Get a random alphanumeric string (ie. matches pattern ^[a-zA-Z0-9]*$.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "string",
+            "params": [
+                {
+                    "name": "len",
+                    "description": "The desired length for the returned String.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A random alphanumeric string",
+                "type": "String"
+            },
+            "class": "Random",
+            "module": "Jenkins"
+        }
+    ],
+    "warnings": []
+}

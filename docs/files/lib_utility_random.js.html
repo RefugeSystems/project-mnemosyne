@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib\utility\random.js - project-mnemosyne</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="project-mnemosyne" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.3</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Algorithm.html">Algorithm</a></li>
+                                <li><a href="../classes/Authentication.html">Authentication</a></li>
+                                <li><a href="../classes/BasicAuthentication.html">BasicAuthentication</a></li>
+                                <li><a href="../classes/Board.html">Board</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/Connect.html">Connect</a></li>
+                                <li><a href="../classes/CredentialAuthentication.html">CredentialAuthentication</a></li>
+                                <li><a href="../classes/GeneralAlgorithm.html">GeneralAlgorithm</a></li>
+                                <li><a href="../classes/GITLabConnection.html">GITLabConnection</a></li>
+                                <li><a href="../classes/IntegratredService.html">IntegratredService</a></li>
+                                <li><a href="../classes/Issue.html">Issue</a></li>
+                                <li><a href="../classes/JenkinsConnection.html">JenkinsConnection</a></li>
+                                <li><a href="../classes/JenkinsJob.html">JenkinsJob</a></li>
+                                <li><a href="../classes/JIRAConnection.html">JIRAConnection</a></li>
+                                <li><a href="../classes/Memory.html">Memory</a></li>
+                                <li><a href="../classes/Project.html">Project</a></li>
+                                <li><a href="../classes/Random.html">Random</a></li>
+                                <li><a href="../classes/Release.html">Release</a></li>
+                                <li><a href="../classes/Schema:idSchema.html">Schema:idSchema</a></li>
+                                <li><a href="../classes/Schema:Memory.html">Schema:Memory</a></li>
+                                <li><a href="../classes/Schema:Project.html">Schema:Project</a></li>
+                                <li><a href="../classes/Schema:TestCase.html">Schema:TestCase</a></li>
+                                <li><a href="../classes/ServiceNowConnection.html">ServiceNowConnection</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/URLAuthentication.html">URLAuthentication</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Algorithms.html">Algorithms</a></li>
+                                <li><a href="../modules/Connections.html">Connections</a></li>
+                                <li><a href="../modules/Jenkins.html">Jenkins</a></li>
+                                <li><a href="../modules/Main.html">Main</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib\utility\random.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * Provides a suite of functions for generating random data.
+ * @class Random
+ * @constructor
+ * @static
+ */
+
+/**
+ * Quick reference array for generating random strings
+ * @private
+ * @property alphanumeric
+ * @type Array
+ */
+var alphanumeric = [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;];
+
+/**
+ * &lt;p&gt;Method for getting a random floating point number x | min &lt;= x &lt; min + range&lt;/p&gt;
+ * &lt;p&gt;As an example, random(5) will yield a number between 0 and 5 where as
+ * random(5,5) will yield a number between 5 and 10.&lt;p&gt;
+ * @private
+ * @method number
+ * @param {Number} range The &quot;width&quot; of the range of numbers desired.
+ * @param {Number} min The minimum number desired.
+ * @return {Number} A random number.
+ */
+module.exports.number = function(range, min) {
+	if(min) {
+		return Math.random() * range + min;
+	}
+	return Math.random() * range;
+};
+
+/**
+ * &lt;p&gt;Method for getting a random integer x | min &lt;= x &lt; min + range&lt;/p&gt;
+ * &lt;p&gt;As an example, random(5) will yield a number between 0 and 4 where as
+ * random(5,5) will yield a number between 5 and 9.&lt;p&gt;
+ * @private
+ * @method integer
+ * @param {Number} range The &quot;width&quot; of the range of numbers desired.
+ * @param {Number} min The minimum number desired.
+ * @return {Number} A random number.
+ */
+module.exports.integer = function(range, min) {
+	if(min) {
+		return Math.floor(Math.random() * range + min);
+	}
+	return Math.floor(Math.random() * range);
+};
+
+/**
+ * Get a random alphanumeric string (ie. matches pattern ^[a-zA-Z0-9]*$.
+ * @private
+ * @method string
+ * @param {Number} len The desired length for the returned String.
+ * @return {String} A random alphanumeric string
+ */
+module.exports.string = function(len) {
+	if(len) {
+		var string = alphanumeric[module.exports.integer(alphanumeric.length)];
+		while(string.length &lt; len) {
+			string += alphanumeric[module.exports.integer(alphanumeric.length)];
+		}
+		return string;
+	} else{
+		return null;
+	}
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
