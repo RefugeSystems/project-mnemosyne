@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib\jira\release.js - project-mnemosyne</title>
+    <title>AuthorizationToken - project-mnemosyne</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -106,100 +106,43 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: lib\jira\release.js</h1>
+<h1>AuthorizationToken Class</h1>
+<div class="box meta">
 
-<div class="file">
-    <pre class="code prettyprint linenums">
 
-var releases = {};
+        <div class="foundat">
+            Defined in: <a href="../files/lib_connections_index.js.html#l141"><code>lib\connections\index.js:141</code></a>
+        </div>
 
-/**
- * 
- * @class Release
- * @constructor
- * @param {Object} details
- */
-module.exports = function(details) {
-	if(releases[details.id]) {
-		return releases[details.id];
-	}
-	
-	var release = this;
+            Module: <a href="../modules/Connections.html">Connections</a>
 
-	/**
-	 * 
-	 * @property id
-	 * @type String
-	 */
-	this.id = details.id;
+</div>
 
-	/**
-	 * 
-	 * @property name
-	 * @type String
-	 */
-	this.name = details.name;
 
-	/**
-	 * 
-	 * @property link
-	 * @type String
-	 */
-	this.link = details.self;
-	
-	/**
-	 * 
-	 * @property issues
-	 * @type Array | &gt; | Issue
-	 */
-	this.issues = [];
+<div class="box intro">
+    
+</div>
 
-	/**
-	 * 
-	 * @property releaseDate
-	 * @type Number
-	 */
-	this.releaseDate = details.releaseDate;
-	if(this.releaseDate) {
-		this.releaseDate = new Date(this.releaseDate).getTime();
-	}
-	
-	
-	this.toJSON = function() {
-		var returning = {};
-		Object.assign(returning, release);
-		returning.issues = [];
-		release.issues.forEach(function(issue) {
-			returning.issues.push(issue.key);
-		});
-		return returning;
-	};
-	
-	this.toString = function() {
-		return JSON.stringify(release.toJSON(), null, 4);
-	};
 
-	this.toSave = function() {
-		var releaseDate = new Date(release.releaseDate);
-		var date = &quot;&quot;;
-		date += releaseDate.getFullYear();
-		date += &quot;-&quot;;
-		date += releaseDate.getMonth() + 1;
-		date += &quot;-&quot;;
-		date += releaseDate.getDate();
-		return{
-			id: release.id,
-			self: release.self,
-			name: release.name,
-			description: release.description,
-			releaseDate: date
-		};
-	};
-	
-	releases[details.id] = this;
-};
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
 
-    </pre>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
 </div>
                     </div>
                 </div>

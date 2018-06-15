@@ -3,6 +3,8 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "Algorithm",
         "Authentication",
+        "AuthorizationBasic",
+        "AuthorizationToken",
         "BasicAuthentication",
         "Board",
         "Configuration",

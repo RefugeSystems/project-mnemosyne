@@ -2,7 +2,7 @@
     "project": {
         "name": "project-mnemosyne",
         "description": "Cross system project aggregator",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "url": "https://github.com/aetherwalker/project-mnemosyne#readme"
     },
     "files": {
@@ -48,7 +48,9 @@
                 "Connections": 1
             },
             "classes": {
-                "Connect": 1
+                "Connect": 1,
+                "AuthorizationBasic": 1,
+                "AuthorizationToken": 1
             },
             "fors": {},
             "namespaces": {}
@@ -277,6 +279,8 @@
             "elements": {},
             "classes": {
                 "Connect": 1,
+                "AuthorizationBasic": 1,
+                "AuthorizationToken": 1,
                 "GITLabConnection": 1,
                 "JenkinsConnection": 1
             },
@@ -424,6 +428,32 @@
                     "type": "Object"
                 }
             ]
+        },
+        "AuthorizationBasic": {
+            "name": "AuthorizationBasic",
+            "shortname": "AuthorizationBasic",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Connections",
+            "namespace": "",
+            "file": "lib\\connections\\index.js",
+            "line": 136
+        },
+        "AuthorizationToken": {
+            "name": "AuthorizationToken",
+            "shortname": "AuthorizationToken",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Connections",
+            "namespace": "",
+            "file": "lib\\connections\\index.js",
+            "line": 141
         },
         "JIRAConnection": {
             "name": "JIRAConnection",
@@ -1122,7 +1152,7 @@
         },
         {
             "file": "lib\\connections\\index.js",
-            "line": 79,
+            "line": 77,
             "itemtype": "property",
             "name": "log",
             "type": "Bunyan",
@@ -1131,7 +1161,7 @@
         },
         {
             "file": "lib\\connections\\index.js",
-            "line": 91,
+            "line": 89,
             "itemtype": "property",
             "name": "log",
             "type": "Bunyan",
@@ -1140,7 +1170,7 @@
         },
         {
             "file": "lib\\connections\\index.js",
-            "line": 101,
+            "line": 99,
             "description": "If a valid JIRA property is present on the settings object, this\nproperty is initialized as the default JIRA handler.",
             "itemtype": "property",
             "name": "jira",
@@ -1150,21 +1180,21 @@
         },
         {
             "file": "lib\\connections\\index.js",
-            "line": 115,
+            "line": 111,
             "description": "If a valid Service-Now property is present on the settings object, this\nproperty is initialized as the default Service-Now handler.",
             "itemtype": "property",
             "name": "servicenow",
-            "type": "SNowConnection",
+            "type": "ServiceNowConnection",
             "class": "Connect",
             "module": "Connections"
         },
         {
             "file": "lib\\connections\\index.js",
-            "line": 129,
+            "line": 123,
             "description": "If a valid GitLab property is present on the settings object, this\nproperty is initialized as the default GitLab handler.",
             "itemtype": "property",
             "name": "gitlab",
-            "type": "GLabConnection",
+            "type": "GITLabConnection",
             "class": "Connect",
             "module": "Connections"
         },

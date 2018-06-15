@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="project-mnemosyne" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.3</em>
+            <em>API Docs for: 0.0.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,6 +40,8 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Algorithm.html">Algorithm</a></li>
                                 <li><a href="../classes/Authentication.html">Authentication</a></li>
+                                <li><a href="../classes/AuthorizationBasic.html">AuthorizationBasic</a></li>
+                                <li><a href="../classes/AuthorizationToken.html">AuthorizationToken</a></li>
                                 <li><a href="../classes/BasicAuthentication.html">BasicAuthentication</a></li>
                                 <li><a href="../classes/Board.html">Board</a></li>
                                 <li><a href="../classes/Configuration.html">Configuration</a></li>
@@ -115,8 +117,8 @@ var AuthorizationBasic = require(&quot;../security/authentication-basic&quot;);
 var AuthorizationToken = require(&quot;../security/authentication-token&quot;);
 
 var JIRAConnection = require(&quot;../jira/connection.js&quot;);
-var SNowConnection = require(&quot;../serviceNow/connection.js&quot;);
-var GLabConnection = require(&quot;../gitlab/connection.js&quot;);
+var ServiceNowConnection = require(&quot;../serviceNow/connection.js&quot;);
+var GITLabConnection = require(&quot;../gitlab/connection.js&quot;);
 
 
 var DEFAULT_RequestSettings = {
@@ -140,7 +142,7 @@ var DEFAULT_EndpointSettings = {
  * @static
  * @param {Object} settings Object providing references to needed settings to initialize the various connections and listeners.
  */
-module.exports.connect = function(settings) {
+module.exports.Connect = function(settings) {
 	var configuration = this;
 	var loading;
 
@@ -182,8 +184,6 @@ module.exports.connect = function(settings) {
 		if(settings.requests) {
 			Object.assign(configuration.endpoint, settings.endpoint);
 		}
-	} else {
-		console.warn(&quot;Default REST Endpoint configuration omitted due to omitted declaration&quot;);
 	}
 
 	/**
@@ -218,38 +218,43 @@ module.exports.connect = function(settings) {
 		settings.jira.requests = configuration.requests;
 		loading = buildAuthentication(settings.jira.authentication);
 		configuration.jira = new JIRAConnection(settings.jira.name, settings.jira.uri, loading, configuration.log, settings.jira);
-	} else{
-		console.warn(&quot;Default JIRA Connection Omitted:\n&quot; + JSON.stringify(settings.jira, null, 4));
 	}
 
 	/**
 	 * If a valid Service-Now property is present on the settings object, this
 	 * property is initialized as the default Service-Now handler.
 	 * @property servicenow
-	 * @type SNowConnection
+	 * @type ServiceNowConnection
 	 */
 	if(settings.servicenow &amp;&amp; settings.servicenow.name &amp;&amp; settings.servicenow.uri &amp;&amp; settings.servicenow.authentication) {
 		settings.servicenow.requests = configuration.requests;
 		loading = buildAuthentication(settings.servicenow.authentication);
-		configuration.servicenow = new SNowConnection(settings.servicenow.name, settings.servicenow.uri, loading, configuration.log, settings.servicenow);
-	} else{
-		console.warn(&quot;Default SNow Connection Omitted:\n&quot; + JSON.stringify(settings.servicenow, null, 4));
+		configuration.servicenow = new ServiceNowConnection(settings.servicenow.name, settings.servicenow.uri, loading, configuration.log, settings.servicenow);
 	}
 
 	/**
 	 * If a valid GitLab property is present on the settings object, this
 	 * property is initialized as the default GitLab handler.
 	 * @property gitlab
-	 * @type GLabConnection
+	 * @type GITLabConnection
 	 */
 	if(settings.gitlab &amp;&amp; settings.gitlab.name &amp;&amp; settings.gitlab.uri &amp;&amp; settings.gitlab.authentication) {
 		settings.gitlab.requests = configuration.requests;
 		loading = buildAuthentication(settings.gitlab.authentication);
-		configuration.gitlab = new GLabConnection(settings.gitlab.name, settings.gitlab.uri, loading, configuration.log, settings.gitlab);
-	} else{
-		console.warn(&quot;Default Gitlab Connection Omitted:\n&quot; + JSON.stringify(settings.gitlab, null, 4));
+		configuration.gitlab = new GITLabConnection(settings.gitlab.name, settings.gitlab.uri, loading, configuration.log, settings.gitlab);
 	}
 };
+
+/**
+ * 
+ * @class AuthorizationBasic
+ */
+module.exports.AuthorizationBasic = AuthorizationBasic;
+/**
+ * 
+ * @class AuthorizationToken
+ */
+module.exports.AuthorizationToken = AuthorizationToken;
 
 /**
  * JIRA Connection constructor
@@ -260,12 +265,12 @@ module.exports.JIRA = JIRAConnection;
  * Service-Now Connection constructor
  * @class ServiceNowConnection
  */
-module.exports.ServiceNow = SNowConnection;
+module.exports.ServiceNow = ServiceNowConnection;
 /**
  * GITLab Connection constructor
  * @class GITLabConnection
  */
-module.exports.GITLab = GLabConnection;
+module.exports.GITLab = GITLabConnection;
 
     </pre>
 </div>
